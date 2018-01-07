@@ -19,7 +19,7 @@ def knapsack(company_data, limit_amount):
                 cache[company][amount] = cache[company - 1][amount]
     # Traceback the solution
     left_over = limit_amount
-    for company in reversed(range(len(1, company_data)+1)):
+    for company in reversed(range(1, len(company_data)+1)):
         if (left_over > 0) and (cache[company][left_over] != cache[company-1][left_over]):
             company_data[company-1]['picked'] = True
             left_over -= company_data[company-1]['amount']
@@ -40,6 +40,7 @@ if __name__ == "__main__":
         max_profit = knapsack(data, max_amount)
         print("Maximum profit with {0} unit of resources is: {1}".format(max_amount, max_profit))
         print("The following companies has been picked:")
+        print("Amount\tPrice")
         for company in data:
             if company['picked']:
                 print("%s\t%s" % (company['amount'], company['price']))
