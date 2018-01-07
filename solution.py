@@ -39,4 +39,6 @@ if __name__ == "__main__":
             next_line = f.readline().split()
         max_profit = knapsack(data, max_amount)
         print("Maximum profit with {0} amount of resources is: {1}".format(max_amount, max_profit))
-        company_picked = [company for company in data if company['picked']]
+        for company in data:
+            if company['picked']:
+                print("%s\t%s" % (company['amount'], company['price']))
