@@ -24,12 +24,11 @@ def knapsack(company_data, limit_amount):
 if __name__ == "__main__":
     with open('input.txt') as f:
         next_line = f.readline().split()
-    max_amount = int(next_line[0])
-    data = []
-    next_line = f.readline().split()
-    while len(next_line) > 0:
-        data.append(dict(amount=int(next_line[0]), price=int(next_line[1]), picked=False))
+        max_amount = int(next_line[0])
+        data = []
         next_line = f.readline().split()
-    f.close()
-    max_profit = knapsack(data, max_amount)
-    print("Maximum profit with {0} amount of resources is: {1}".format(max_amount, max_profit))
+        while len(next_line) > 0:
+            data.append(dict(amount=int(next_line[0]), price=int(next_line[1]), picked=False))
+            next_line = f.readline().split()
+        max_profit = knapsack(data, max_amount)
+        print("Maximum profit with {0} amount of resources is: {1}".format(max_amount, max_profit))
