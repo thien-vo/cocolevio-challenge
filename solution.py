@@ -21,8 +21,9 @@ def knapsack(company_data, limit_amount):
     return cache[-1][-1]
 
 
-with open('input.txt') as f:
-    next_line = f.readline().split()
+if __name__ == "__main__":
+    with open('input.txt') as f:
+        next_line = f.readline().split()
     max_amount = int(next_line[0])
     data = []
     next_line = f.readline().split()
