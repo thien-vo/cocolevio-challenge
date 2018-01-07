@@ -23,6 +23,8 @@ def knapsack(company_data, limit_amount):
         if (left_over > 0) and (cache[company][left_over] != cache[company-1][left_over]):
             company_data[company-1]['picked'] = True
             left_over -= company_data[company-1]['amount']
+        else:
+            company_data[company-1]['picked'] = False
     return cache[-1][-1]
 
 
