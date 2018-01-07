@@ -4,7 +4,7 @@ import numpy as np
 def knapsack(company_data, limit_amount):
     cache = np.zeros((len(company_data) + 1, limit_amount + 1), dtype=np.int)
     for company in range(len(data) + 1):
-        for amount in range(AMOUNT + 1):
+        for amount in range(limit_amount + 1):
             # Using 0 company or having 0 resource
             if (company == 0) | (amount == 0):
                 cache[company][amount] = 0
